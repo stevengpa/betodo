@@ -16,10 +16,10 @@ app.use(cors());
 app.use('/todo', toDoRoutes);
 
 const PORT = process.env.PORT || 3030;
-const { MONGO_USER, MONGO_PWD, MONGO_DB } = process.env;
+const { MONGO_USER, MONGO_PWD, MONGO_DB, MONGO_HOST } = process.env;
 
 mongoose.connect(
-    `mongodb+srv://${MONGO_USER}:${MONGO_PWD}@cluster0-kxsp6.mongodb.net/${MONGO_DB}`,
+    `mongodb+srv://${MONGO_USER}:${MONGO_PWD}@${MONGO_HOST}/${MONGO_DB}`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
